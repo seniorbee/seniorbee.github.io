@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alihaydar Gubatov — Senior Python Backend Developer. Backend-focused engineer with 7+ years of experience in Python, Django, APIs, asynchronous processing, integrations, Docker and AWS." />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Alihaydar Gubatov — Senior Python Backend Developer</title>
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #101a2d;
+      --card: rgba(16, 26, 45, 0.78);
+      --border: rgba(255,255,255,0.09);
+      --text: #f3f6fb;
+      --muted: #a9b4c7;
+      --accent: #7dd3fc;
+      --accent-2: #38bdf8;
+      --max: 1060px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.24);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(56,189,248,.09), transparent 28%),
+        radial-gradient(circle at 90% 30%, rgba(125,211,252,.06), transparent 25%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(11,18,32,.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    header {
+      padding: 105px 0 78px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .86rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: .98;
+      letter-spacing: -0.055em;
+    }
+
+    .headline {
+      margin: 25px 0 0;
+      max-width: 760px;
+      font-size: clamp(1.15rem, 2.2vw, 1.42rem);
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 17px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      font-weight: 700;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(125,211,252,.28);
+    }
+
+    .button.primary {
+      background: var(--accent-2);
+      color: #06111c;
+      border-color: transparent;
+    }
+
+    section {
+      padding: 78px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      margin: 0 0 28px;
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+    }
+
+    .intro {
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.14rem;
+      letter-spacing: -0.01em;
+    }
+
+    .meta {
+      margin-top: 5px;
+      color: var(--accent);
+      font-size: .91rem;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 14px 0 0;
+    }
+
+    .card ul {
+      color: var(--muted);
+      margin: 14px 0 0;
+      padding-left: 20px;
+    }
+
+    .card li + li { margin-top: 7px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+      color: #d8e0ec;
+      font-size: .91rem;
+    }
+
+    .architecture {
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #08101d;
+      margin-top: 22px;
+    }
+
+    .architecture pre {
+      margin: 0;
+      padding: 24px;
+      overflow-x: auto;
+      color: #c9d5e7;
+      font: 500 .93rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    footer {
+      padding: 30px 0 45px;
+      color: #7f8ba0;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-links { display: none; }
+      header { padding: 80px 0 60px; }
+      section { padding: 60px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .card { padding: 21px; }
+      h1 { font-size: clamp(2.65rem, 15vw, 4.2rem); }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Alihaydar Gubatov</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header>
+      <div class="container">
+        <div class="eyebrow">Python Backend Developer</div>
+        <h1>Backend systems, APIs & integrations.</h1>
+        <p class="headline">
+          Backend-focused engineer with 7+ years of professional software development
+          experience, including remote work for international companies. I build
+          production systems with Python, Django, APIs, asynchronous processing,
+          integrations, Docker and cloud services.
+        </p>
+
+        <div class="actions">
+          <!-- Replace these three placeholder URLs before publishing. -->
+          <a class="button primary" href="mailto:gubatovalihaydar@gmail.com">Contact me</a>
+          <a class="button" href="https://github.com/seniorbee" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="#experience">View experience</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Professional experience</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>PadSplit</h3>
+            <div class="meta">Fullstack Developer · Jun 2021 – Nov 2022 · Remote</div>
+            <p>
+              Worked on a production platform focused on affordable housing,
+              with a strong backend focus before expanding into fullstack work.
+            </p>
+            <ul>
+              <li>Built and maintained backend functionality with Python and Django.</li>
+              <li>Designed and consumed REST APIs and service integrations.</li>
+              <li>Worked with asynchronous/background processing and cloud services.</li>
+              <li>Contributed to application features across backend and frontend layers.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>MallExpress</h3>
+            <div class="meta">Backend Developer · Aug 2019 – May 2020 · Baku</div>
+            <p>
+              Backend developer for a marketplace platform, responsible for
+              designing and implementing core application functionality.
+            </p>
+            <ul>
+              <li>Architected and built backend services for the marketplace.</li>
+              <li>Designed APIs and application data flows around business requirements.</li>
+              <li>Worked on integrations and backend workflows needed by the platform.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 class="section-title">Selected engineering work</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Survey platform integrations & routing</h3>
+            <p>
+              Built integrations with survey platforms including Qualtrics,
+              SurveyMonkey and Alchemer, and worked on routing survey-related
+              traffic between platforms and services.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>LLM / API integration</h3>
+            <p>
+              Worked on integrating LLM capabilities into an application,
+              connecting model APIs with existing application workflows rather
+              than treating the model as a standalone feature.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Cloud-backed backend services</h3>
+            <p>
+              Experience with AWS components including Lambda, S3 and DynamoDB,
+              alongside containerized application development and Docker-based
+              deployment workflows.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>API-heavy backend development</h3>
+            <p>
+              Strong focus on REST APIs, third-party integrations, backend
+              business logic and reliable communication between external
+              services and application components.
+            </p>
+          </article>
+        </div>
+
+        <div class="architecture" aria-label="Typical backend architecture">
+<pre>
+Client / Frontend
+        |
+        v
+   REST / GraphQL API
+        |
+        +-------------------+
+        |                   |
+        v                   v
+   Application         PostgreSQL
+     services
+        |
+        +---------> Redis
+        |
+        +---------> Celery / background workers
+        |
+        +---------> External APIs / services
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical skills</h2>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">GraphQL</span>
+          <span class="tag">Celery</span>
+          <span class="tag">Redis</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Lambda</span>
+          <span class="tag">S3</span>
+          <span class="tag">DynamoDB</span>
+          <span class="tag">Git</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Automated testing</span>
+          <span class="tag">API integrations</span>
+          <span class="tag">Asynchronous processing</span>
+        </div>
+
+        <p class="intro" style="margin-top:24px;">
+          My main focus is backend engineering: turning business workflows into
+          maintainable APIs, data models, background jobs and integrations that
+          can be operated in production.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact">
+          <!-- Replace these before publishing. -->
+          <a class="button primary" href="mailto:gubatovalihaydar@gmail.com">Email me</a>
+          <a class="button" href="https://github.com/seniorbee" target="_blank" rel="noopener">GitHub</a>
+          <!-- Optional: replace with your LinkedIn URL -->
+          <!-- <a class="button" href="https://www.linkedin.com/in/seniorbee" target="_blank" rel="noopener">LinkedIn</a> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Alihaydar Gubatov
+    </div>
+  </footer>
+</body>
+</html>
